@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Hello, world!</title>
+
+
+    <style>
+        .card-display {
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 100px;
+        }
+
+        .card {
+            height: 120px;
+            width: 500px;
+            border-radius: 10px;
+        }
+
+        .bg-info {
+            background-color: slateblue !important;
+        }
+
+        .shadow {
+            margin: 50px;
+            height: auto;
+            width: auto;
+
+        }
+
+        .btn-success {
+            color: #fff;
+            background-color: #28a745;
+            border-color: #28a745;
+            margin-top: 20px;
+        }
+
+        .rounded {
+            border-radius: 1rem !important;
+        }
+
+        .button {
+            text-align: center;
+        }
+
+        .logoutArea .btn-outline-secondary {
+            font-size: 1.5rem;
+
+        }
+
+        .LogOut {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .shadow-lg {
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+            width: fit-content;
+        }
+
+        .DW {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .DW .shadow {
+            width: 400px;
+        }
+
+        .login {
+            margin-top: 50px;
+        }
+
+        .align {
+            text-align: center;
+        }
+
+        .button-felx {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        button {
+            width: 120px;
+        }
+
+        .Registation {
+            margin-top: 50px;
+        }
+
+        #transaction-area {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+
+        <div class="login" id="loginPage">
+            <div>
+                <h2 class="align">Welcome to Pioneer Bank</h2>
+            </div>
+            <div>
+                <div class="shadow p-4 mb-5 bg-body rounded">
+                    <h3 class="align">Login</h3> <br>
+                    <form action="#">
+                        <div class="login-form">
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="button button-felx">
+                        <button class="btn btn-success" id="loginButton1" type="submit">Login</button>
+                        <button id="regButton1" class="btn btn-success" onclick="addRegistation()">Registation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="Registation d-none" id="registation">
+            <div>
+                <h2 class="align">Welcome to Pioneer Bank Registation</h2>
+            </div>
+            <div>
+                <div class="shadow p-4 mb-5 bg-body rounded">
+                    <h3 class="align">Registation</h3> <br>
+                    <form action="#" id="reg">
+                        <div class="Registation-form">
+                            <div class="row mb-3">
+                                <label for="name" class="col-sm-2 col-form-label">Full Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="fullName" class="form-control" id="name">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" name="email" id="email">
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="depositAmount1" class="col-sm-2 col-form-label">Deposite-Aumont</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" name="depositAmount1" id="depositAmount1">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="phone" class="col-sm-2 col-form-label">Phone</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control" name="phoneNumber" id="phoneNumber">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="password" class="col-sm-2 col-form-label">Password</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="password">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="button button-felx">
+                        <button class="btn btn-success" id="regButton2" type="submit">Registation</button>
+                        <button onclick="addLogin()" id="loginButton2" class="btn btn-success">Login</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div id="transaction-area">
+            <div class="card-display">
+
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5>Deposit</h5>
+                        <h2 class="card-title">$ <span id="depositeOut">00</span></h2>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5>Withdraw</h5>
+                        <h2 class="card-title">$ <span id="withdrawOut">00</span></h2>
+                    </div>
+                </div>
+
+                <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+                    <div class="card-body">
+                        <h5>Balance</h5>
+                        <h2 class="card-title">$ <span id="totalBalance">100</span></h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="DW">
+
+                <div class="shadow p-4 mb-5 bg-body rounded">
+                    <h3>Deposit</h3> <br>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" id="depositeInput" placeholder="amount you want to deposit"
+                            class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+
+                    <div class="button">
+                        <button onclick="deposite()" class="btn btn-success">Deposit</button>
+                    </div>
+                </div>
+
+
+                <div class="shadow p-4 mb-5 bg-body rounded">
+                    <h3>Withdraw</h3> <br>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">$</span>
+                        <input type="text" id="withdrawInput" placeholder="amount you want to withdraw"
+                            class="form-control" aria-label="Dollar amount (with dot and two decimal places)">
+                    </div>
+
+                    <div class="button">
+                        <button onclick="withdraw()" class="btn btn-success">Withdraw</button>
+                    </div>
+                </div>
+            </div>
+            <div class="LogOut">
+                <div id="logoutArea" class="logoutArea shadow-lg p-3 bg-body rounded ">
+                    <button class="btn btn-outline-secondary" id="LogOut">Logout</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <script>
+        function deposite() {
+            var DepositeInput = document.getElementById("depositeInput").value;
+            var Input2 = document.getElementById("depositeOut").innerText;
+            var DepositeInput2 = parseFloat(Input2);
+            var Balance = document.getElementById("totalBalance").innerText;
+            var totalBalance = parseFloat(Balance);
+            var Deposite = +DepositeInput2 + +DepositeInput;
+            var total = +totalBalance + + DepositeInput;
+
+            /* DepositeInput2 = NaN;
+            if (isNaN(DepositeInput2)) DepositeInput2 = 0; */
+
+            document.getElementById("depositeOut").innerHTML = Deposite;
+            document.getElementById("totalBalance").innerHTML = total;
+            document.getElementById("depositeInput").value = "";
+        }
+        function withdraw() {
+            var WithdrawInput = document.getElementById("withdrawInput").value;
+            var Input2 = document.getElementById("withdrawOut").innerText;
+            var WithdrawInput2 = parseFloat(Input2);
+            var Balance = document.getElementById("totalBalance").innerText;
+            var totalBalance = parseFloat(Balance);
+            var Withdraw = +WithdrawInput2 + +WithdrawInput;
+            var total = totalBalance - WithdrawInput;
+
+            /* DepositeInput2 = NaN;
+            if (isNaN(DepositeInput2)) DepositeInput2 = 0; */
+
+            document.getElementById("withdrawOut").innerHTML = Withdraw;
+            document.getElementById("totalBalance").innerHTML = total;
+            document.getElementById("withdrawInput").value = "";
+        }
+
+        /*  function getInput(idname){
+             const amount=document.getElementById(idname).value;
+             const amountNumber = parseFloat(amount);
+             return amountNumber;
+         } */
+
+
+
+        /* add & Remove Registation */
+
+        var RegButton1 = document.getElementById("regButton1");
+        var RegButton2 = document.getElementById("regButton2");
+        var RegForm = document.getElementById("registation");
+        var LoginButton1 = document.getElementById("loginButton1");
+        var LoginButton2 = document.getElementById("loginButton2");
+        var LoginPage = document.getElementById("loginPage");
+        var Reg = document.getElementById("reg");
+        var TransactionArea = document.getElementById("transaction-area");
+        var LogOut = document.getElementById("LogOut");
+
+        function addRegistation() {
+            LoginPage.classList.add("d-none");
+            RegForm.classList.remove("d-none");
+        }
+
+        LoginButton1.addEventListener("click", function () {
+            LoginPage.style.display = "none";
+            TransactionArea.style.display = "block";
+        })
+        LogOut.addEventListener("click", function () {
+            LoginPage.style.display = "block";
+            TransactionArea.style.display = "none";
+        })
+
+        function addLogin() {
+            LoginPage.classList.remove("d-none");
+            RegForm.classList.add("d-none");
+        }
+
+        /*  Get Registation form Data */
+        let userArray = new Array();
+
+
+        Reg.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+
+
+            let user = {
+                id: userArray.length + 1,
+                fullName: fullName.value,
+                email: email.value,
+                depositAmount: depositAmount1.value,
+                phoneNumber: phoneNumber.value,
+                withdraw: 0,
+                password: password.value
+            }
+
+
+
+            let prevUser = userArray.find(item => item.email === email.value)
+
+
+            if (prevUser === undefined) {
+                userArray.push(user)
+                localStorage.setItem('bankUser', JSON.stringify(userArray));
+                alert("Registration Success.");
+                LoginPage.classList.remove("d-none");
+                RegForm.classList.add("d-none");
+
+            } else {
+                alert("User Already Exist!")
+            }
+
+        })
+
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
